@@ -48,7 +48,11 @@
             visibility: visible;
             opacity: 1;
             display: block;
+        }
 
+        .main-bg {
+            padding: 100px 20px;
+            background-color: lightgrey;
         }
     </style>
 </head>
@@ -58,9 +62,27 @@
     <div class="black-bg">
         <div class="white-bg">
             <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
+            <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="input1">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="input2">
+                </div>
+                <button type="submit" class="btn btn-primary" id="s">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('s').addEventListener('click', function () {
+            if (!document.getElementById('input1') || !document.getElementById('input2')) {
+                alert('입력하세요')
+            }
+        })
+
+    </script>
 
 
 
@@ -82,7 +104,11 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <button id="login">로그인</button>
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login">로그인</button>
+    </div>
+
 
     <script>
         document.getElementById('login').addEventListener('click', function () {
