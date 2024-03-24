@@ -89,6 +89,9 @@
             if (/\s+@\s+.\s+/.test(inputEmail)) {
                 alert('이메일형식아님');
             }
+            if (/[A-Z]/.test(inputPw) == false) {
+                alert('대문자없는데용');
+            }
         })
 
     </script>
