@@ -64,21 +64,28 @@
             <h4>로그인하세요</h4>
             <form action="success.html">
                 <div class="my-3">
-                    <input type="text" class="form-control" id="input1">
+                    <input type="text" class="form-control" id="email">
                 </div>
                 <div class="my-3">
-                    <input type="password" class="form-control" id="input2">
+                    <input type="password" class="form-control" id="pw">
                 </div>
-                <button type="submit" class="btn btn-primary" id="s">전송</button>
+                <button type="submit" class="btn btn-primary" id="send">전송</button>
                 <button type="button" class="btn btn-danger" id="close">닫기</button>
             </form>
         </div>
     </div>
 
     <script>
-        document.getElementById('s').addEventListener('click', function () {
-            if (!document.getElementById('input1') || !document.getElementById('input2')) {
-                alert('입력하세요')
+
+
+
+        document.getElementById('send').addEventListener('click', function (e) {
+            if (document.getElementById('email').value == '' || document.getElementById('pw').value == '') {
+                e.preventDefault()
+                alert('빈칸있네요 돌아가세요')
+            } else if (document.getElementById('pw').value.length < 6) {
+                e.preventDefault()
+                alert('비번이 너무 잘바용 다시 돌아가셈')
             }
         })
 
@@ -89,12 +96,18 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
+            <span class="navbar-brand">SYShop</span>
+            <span class="badge bg-dark">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+    <script>
+        let count = 0
+        let badge = document.getElementsByClassName('badge')
+        badge.addEventListener('click',)
+    </script>
 
     <ul class="list-group">
         <li class="list-group-item">An item</li>
@@ -109,6 +122,16 @@
         <button id="login">로그인</button>
     </div>
 
+    <div class="alert alert-danger">
+        5초 이내 구매시 사은품 증정!
+    </div>
+    <!-- x초후 코드 실행하려면
+    setTimeout(function(){실행코드}, ms) -->
+    <script>
+        setTimeout(function () {
+            document.getElementsByClassName('alert-danger').style.display = "none";
+        }, 2000)
+    </script>
 
     <script>
         document.getElementById('login').addEventListener('click', function () {
