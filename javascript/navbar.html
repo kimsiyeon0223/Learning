@@ -123,18 +123,25 @@
     </div>
 
     <div class="alert alert-danger">
-        5초 이내 구매시 사은품 증정!
+        <span>5</span>초 이내 구매시 사은품 증정!
     </div>
     <!-- x초후 코드 실행하려면
     setTimeout(function(){실행코드}, ms) -->
     <script>
-        setTimeout(f1, 1000) //콜백함수자리엔 만들어둔 함수 넣을 수 있음
-        function f1() {
-            console.log('안녕');
-        }
-        // setInterval(function () {
+        var count1 = 5;
+        setInterval(function () {
+            count1 -= 1;
+            if (count1 >= 0) {
+                document.querySelector('#num').innerHTML = count1;
+            }
+        }, 1000)
+        // setTimeout(f1, 1000) //콜백함수자리엔 만들어둔 함수 넣을 수 있음
+        // function f1() {
         //     console.log('안녕');
-        // }, 1000)
+        // }
+        // // setInterval(function () {
+        // //     console.log('안녕');
+        // // }, 1000)
     </script>
 
     <script>
