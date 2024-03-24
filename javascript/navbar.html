@@ -76,16 +76,18 @@
     </div>
 
     <script>
-
-
-
         document.getElementById('send').addEventListener('click', function (e) {
-            if (document.getElementById('email').value == '' || document.getElementById('pw').value == '') {
+            let inputEmail = document.getElementById('email').value;
+            let inputPw = document.getElementById('pw').value;
+            if (inputEmail == '' || inputPw == '') {
                 e.preventDefault()
                 alert('빈칸있네요 돌아가세요')
-            } else if (document.getElementById('pw').value.length < 6) {
+            } else if (inputPw.length < 6) {
                 e.preventDefault()
                 alert('비번이 너무 잘바용 다시 돌아가셈')
+            }
+            if (/\s+@\s+.\s+/.test(inputEmail)) {
+                alert('이메일형식아님');
             }
         })
 
