@@ -54,6 +54,20 @@
             padding: 100px 20px;
             background-color: lightgrey;
         }
+
+        .slide-container {
+            width: 300vw;
+            transform: all 1s;
+        }
+
+        .slide-box {
+            width: 100vw;
+            float: left;
+        }
+
+        .slide-box img {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -126,6 +140,31 @@
         <h4>Shirts on Sale</h4>
         <button id="login">로그인</button>
     </div>
+
+
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="https://codingapple.com/wp-content/uploads/2022/02/car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="https://codingapple.com/wp-content/uploads/2022/02/car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="https://codingapple.com/wp-content/uploads/2022/02/car3.png">
+            </div>
+        </div>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+    <script>
+        document.querySelector('#slide-2').addEventListener('click', function () {
+            document.querySelector('#slide-container').style.transform = 'translateX(-100vw)';
+        })
+    </script>
+
 
     <div class="alert alert-danger">
         <span>5</span>초 이내 구매시 사은품 증정!
