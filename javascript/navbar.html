@@ -128,12 +128,13 @@
     <!-- x초후 코드 실행하려면
     setTimeout(function(){실행코드}, ms) -->
     <script>
-        setTimeout(function () {
-            document.getElementsByClassName('alert-danger').style.display = "none";
-        }, 2000)
-        setInterval(function () {
+        setTimeout(f1, 1000) //콜백함수자리엔 만들어둔 함수 넣을 수 있음
+        function f1() {
             console.log('안녕');
-        }, 1000)
+        }
+        // setInterval(function () {
+        //     console.log('안녕');
+        // }, 1000)
     </script>
 
     <script>
