@@ -68,10 +68,15 @@
         .slide-box img {
             width: 100%;
         }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 
-<body>
+<body class="dark">
     <!--로그인버튼 누르면 모달창 띄우기-->
     <div class="black-bg">
         <div class="white-bg">
@@ -123,9 +128,19 @@
         </div>
     </nav>
     <script>
+        // var = 재선언 O, 재할당 O, 범위 function
+        // let = 재선언 X, 재할당 O, 범위 { }
+        // const = 재선언 X, 재할당 X, 범위 { }
+
         let count = 0
         let badge = document.getElementsByClassName('badge')
-        badge.addEventListener('click',)
+        badge.addEventListener('click', function () {
+            if (count % 2 == 1) {
+                badge.innerHTML = 'Light 🔄';
+            } else {
+                badge.innerHTML = "Dark 🔄"
+            }
+        })
     </script>
 
     <ul class="list-group">
